@@ -1,0 +1,12 @@
+# Ignore node_modules
+node_modules
+
+# Ignore .prettierrc
+.prettierrc
+
+# Ignore eslint.config.mjs
+eslint.config.mjs
+
+# Ignore package-lock.json and package.json
+package-lock.json
+package.json

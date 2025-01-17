@@ -1,12 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Chronicler</title>
   </head>
   <body>
-    <h1>Welcome to Chronicler!</h1>
+    <header id="header">Chronicler</header>
+    <h1>Create a Story</h1>
+
+    <form>
+      <div id="title-container">
+        <!-- <legend>Give your story a title</legend> -->
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter your story's title here..." />
+        <span id="title-hint" class="hint">Your story must have a title</span>
+        <br /><br />
+      </div>
+
+      <div id="text-container">
+        <!-- <legend>Write your story</legend> -->
+        <label for="text">Content:</label>
+        <textarea id="text" name="text" rows="6" cols="60" placeholder="Write your story here..."></textarea
+        ><br /><br />
+        <p id="char-count">Characters left to reach minimum: 180</p>
+
+        <span id="text-hint" class="hint">Your story must contain a minimum of 180 characters</span>
+      </div>
+
+      <button type="submit" id="submit-button">Post</button>
+    </form>
+    <footer>A website by Tristan</footer>
+    <script src="scripts.js"></script>
   </body>
 </html>
