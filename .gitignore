@@ -1,4 +1,4 @@
-# Ignore node_modules
+# Ignore node_modules and .vscode
 node_modules
 
 # Ignore .prettierrc
