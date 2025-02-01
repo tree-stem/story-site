@@ -13,8 +13,7 @@
   <body>
     <header id="header">Chronicler</header>
     <h1>Create a Story</h1>
-    <button type="button" id="toggle-hints">Hide Hints</button>
-
+    
     <form>
       <div id="title-container">
         <label for="title">Title:</label>
@@ -31,9 +30,44 @@
         <p id="char-count">Characters left to reach minimum: 180</p>
         <br /><br />
       </div>
-
-      <button type="submit" id="submit-button">Post</button>
+    
+    <button type="submit" id="submit-button">Post</button>
     </form>
+
+  <div id="settings">  
+
+    <div id="hint-block" class="setting-block">
+      <div id="toggle-hints" class="radio-buttons">
+        <label for="toggle-hints">Hints:</label>
+      </div>  
+
+      <div id="hints-on-container" class="hints-containers">
+        <label for="hints-on">on</label>
+        <input type="radio" name="hints" id="hints-on" class="hints-radio" checked/>
+      </div>
+
+      <div id="hints-off-container" class="hints-containers">
+        <label for="hints-off">off</label>
+        <input type="radio" name="hints" id="hints-off" class="hints-radio"/>
+      </div>
+    </div>
+
+    <div id="bare-mode-block" class="setting-block">
+      <div id="toggle-bare-mode" class="radio-buttons">
+        <label for="toggle-bare-mode">Bare mode:</label>
+      </div>
+
+      <div id="bare-mode-on-container" class="bare-mode-containers">
+        <label for="bare-mode-on">on</label>
+        <input type="radio" name="bare-mode" id="bare-mode-on" class="bare-mode-radio"/>
+      </div> 
+      
+      <div id="bare-mode-off-container" class="bare-mode-containers">
+        <label for="bare-mode-off">off</label>
+        <input type="radio" name="bare-mode" id="bare-mode-off" class="bare-mode-radio" checked/>
+      </div>
+    </div>
+  </div>
     <footer>A website by Tristan</footer>
     <script src="script.js"></script>
   </body>

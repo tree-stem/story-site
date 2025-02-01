@@ -8,19 +8,34 @@ const titleInput = document.querySelector("#title");
 const textareaInput = document.querySelector("#text");
 
 // Selects both the title and textarea's hint message
-const hint = document.querySelectorAll("span");
+const hints = document.querySelectorAll("span");
 
-// Added an eventListener on the button to listen for submissions
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+// Add event listener to toggle hints 
+const hintsOn = document.querySelector('#hints-on');
+const hintsOff = document.querySelector('#hints-off');
 
-  if (titleInput.value === "") {
-    hint[0].style.display = "block";
-  }
+// Add event listener to toggle placeholders
+const bareModeOn = document.querySelector('#bare-mode-on');
+const bareModeOff = document.querySelector('#bare-mode-off');
 
-  if (textareaInput.value.length < 180) {
-    hint[1].style.display = "block";
-  }
+const placeholders = document.querySelectorAll('[placeholder]');
+
+bareModeOn.addEventListener('click', () => {
+  placeholders.forEach((item) => {
+    item.placeholder = '';
+  });
+
+  charCount.style.display = 'none';
+});
+
+bareModeOff.addEventListener('click', () => {
+  var titlePlaceholder = "Enter your title here";
+  var textareaPlaceholder = "Write your story here";
+
+  placeholders[0].placeholder = titlePlaceholder;
+  placeholders[1].placeholder = textareaPlaceholder;
+
+  charCount.style.display = 'block';
 });
 
 // 2. Shows characters remaining when typing
@@ -39,10 +54,41 @@ textareaInput.addEventListener("input", () => {
   if (remainingChars === 0) {
     charCount.style.display = "none";
     console.log("hello world!");
-  } else if (remainingChars > 0) {
+  } else if (remainingChars > 0 && bareModeOff.checked) {
     charCount.style.display = "block";
   }
 
   // Updates the displayed character count
   charCount.textContent = `Characters left to reach minimum: ${remainingChars}`;
 });
+
+// Added an eventListener on the button to listen for submissions
+let formSubmitted = false;
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  formSubmitted = true;
+
+  if (titleInput.value === "" && hintsOn.checked) {
+    hints[0].style.display = "block";
+  }
+
+  if (textareaInput.value.length < 180 && hintsOn.checked) {
+    hints[1].style.display = "block";
+  }
+});
+
+hintsOn.addEventListener('click', () => {
+  if (formSubmitted) {
+    hints.forEach((hint) => {
+      hint.style.display = 'block';
+    });
+  };
+});
+
+hintsOff.addEventListener('click', () => {
+  hints.forEach((hint) => {
+    hint.style.display = 'none';
+  });
+});
+

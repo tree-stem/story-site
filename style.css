@@ -63,3 +63,53 @@ span {
 p {
   color: #808080;
 }
+
+::placeholder {
+  visibility: visible;
+}
+
+.radio-buttons {
+  display: inline-block;
+}
+
+.hints-containers {
+  display: inline-block;
+}
+
+.bare-mode-containers {
+  display: inline-block;
+}
+
+.hints-radio {
+  display: inline-block;
+}
+
+.bare-mode-radio {
+  display: inline-block;
+}
+
+#settings {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.radio-buttons label {
+  margin-right: 5px;
+}
+
+.hints-containers, .bare-mode-containers {
+  margin-right: 2.5px;
+}
+
+.setting-block {
+  display: inline-block;
+
+}
+
+#hint-block {
+  margin-right: 10px;
+}
+
+#bare-mode-block {
+  margin-left: 10px
+}
