@@ -6,7 +6,7 @@ app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
     console.log("hello, world!");
-    res.send("<h1>Hello, world!</h1>");
+    res.render('index');
 });
 
 app.listen(3000, () => {
