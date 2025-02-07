@@ -5,8 +5,12 @@ const app = express();
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-    console.log("hello, world!");
-    res.render('index');
+    res.render('home');
+});
+
+app.get('/home', (req, res) => {
+    console.log("Redirect to home page.");
+    res.redirect('/');
 });
 
 app.listen(3000, () => {
